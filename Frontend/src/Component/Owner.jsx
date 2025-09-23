@@ -1,5 +1,6 @@
 import React from "react";
 import { Building, CheckCircle, Users, TrendingUp } from "lucide-react";
+import Navbar from "./Navbar";
 
 export default function Owner() {
   // Example job data (you should fetch or pass this as props)
@@ -10,7 +11,10 @@ export default function Owner() {
   ];
 
   return (
+    <>
+    <Navbar/>
     <div className="space-y-6">
+      
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* Total Jobs */}
@@ -124,5 +128,6 @@ export default function Owner() {
         </div>
       </div>
     </div>
+    </>
   );
 }
