@@ -3,7 +3,7 @@ import { Building, CheckCircle, Users, TrendingUp } from "lucide-react";
 import Navbar from "./Navbar";
 
 export default function Owner() {
-  // Example job data (you should fetch or pass this as props)
+  
   const jobs = [
     { id: 1, status: "active", applicants: 5 },
     { id: 2, status: "closed", applicants: 8 },
@@ -12,7 +12,7 @@ export default function Owner() {
 
   return (
     <>
-    <Navbar/>
+    
     <div className="space-y-6">
       
       {/* Stats Cards */}
