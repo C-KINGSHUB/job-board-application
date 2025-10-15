@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom"; // ✅ Import Link
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,27 +8,27 @@ export default function Navbar() {
     <nav className="bg-gray-900 text-white shadow-md">
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo */}
-        <a href="#" className="text-2xl font-bold">
+        <Link to="/" className="text-2xl font-bold">
           Employer Portal
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6">
-          <a href="#" className="hover:text-gray-300">Dashboard</a>
-          <a href="#" className="hover:text-gray-300">My Jobs</a>
-          <a href="#" className="hover:text-gray-300">Post Job</a>
-          <a href="#" className="hover:text-gray-300">Applicants</a>
-          <a href="#" className="hover:text-gray-300">Company Profile</a>
+          <Link to="/admin" className="hover:text-gray-300">Dashboard</Link>
+          <Link to="/myjobs" className="hover:text-gray-300">My Jobs</Link>
+          <Link to="/post-job" className="hover:text-gray-300">Post Job</Link>
+          <Link to="/applicants" className="hover:text-gray-300">Applicants</Link>
+          <Link to="/company" className="hover:text-gray-300">Company Profile</Link>
         </div>
 
         {/* Auth Buttons */}
         <div className="hidden md:flex space-x-4">
-          <a href="#" className="bg-white text-gray-900 px-4 py-2 rounded hover:bg-gray-200">
+          <Link to="/settings" className="bg-white text-gray-900 px-4 py-2 rounded hover:bg-gray-200">
             Settings
-          </a>
-          <a href="#" className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+          </Link>
+          <Link to="/logout" className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
             Logout
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Button */}
@@ -42,14 +43,14 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-gray-800 space-y-2 px-4 py-3">
-          <a href="#" className="block hover:text-gray-300">Dashboard</a>
-          <a href="#" className="block hover:text-gray-300">My Jobs</a>
-          <a href="#" className="block hover:text-gray-300">Post Job</a>
-          <a href="#" className="block hover:text-gray-300">Applicants</a>
-          <a href="#" className="block hover:text-gray-300">Company Profile</a>
+          <Link to="/admin" className="block hover:text-gray-300">Dashboard</Link>
+          <Link to="/myjobs" className="block hover:text-gray-300">My Jobs</Link>
+          <Link to="/post-job" className="block hover:text-gray-300">Post Job</Link>
+          <Link to="/applicants" className="block hover:text-gray-300">Applicants</Link>
+          <Link to="/company" className="block hover:text-gray-300">Company Profile</Link>
           <hr className="border-gray-600 my-2"/>
-          <a href="#" className="block bg-white text-gray-900 px-3 py-2 rounded">Settings</a>
-          <a href="#" className="block bg-red-500 text-white px-3 py-2 rounded">Logout</a>
+          <Link to="/settings" className="block bg-white text-gray-900 px-3 py-2 rounded">Settings</Link>
+          <Link to="/logout" className="block bg-red-500 text-white px-3 py-2 rounded">Logout</Link>
         </div>
       )}
     </nav>

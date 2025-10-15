@@ -1,30 +1,41 @@
-import React from "react";
 import { Briefcase, Users, Building2, Settings } from "lucide-react";
+import { Link } from "react-router-dom";
 
-export default function AdminSidebar({ isOpen, toggleSidebar }) {
+export default function Sidebar() {
   return (
-    <aside
-      className={`bg-gray-900 text-white w-64 min-h-screen transition-transform transform ${
-        isOpen ? "translate-x-0" : "-translate-x-full"
-      } md:translate-x-0 md:w-64 fixed md:relative`}
-    >
-      <div className="p-4 text-xl font-bold border-b border-gray-700">
+    <aside className="bg-gray-900 text-white w-64 min-h-screen">
+      <h2 className="text-2xl font-bold px-6 py-4 border-b border-gray-700">
         Admin Panel
-      </div>
+      </h2>
 
       <nav className="mt-6 space-y-2">
-        <a href="#" className="flex items-center gap-3 px-6 py-2 hover:bg-gray-800">
+        <Link
+          to="/myjobs"
+          className="flex items-center gap-3 px-6 py-2 hover:bg-gray-800"
+        >
           <Briefcase size={18} /> Manage Jobs
-        </a>
-        <a href="#" className="flex items-center gap-3 px-6 py-2 hover:bg-gray-800">
+        </Link>
+
+        <Link
+          to="/applicants"
+          className="flex items-center gap-3 px-6 py-2 hover:bg-gray-800"
+        >
           <Users size={18} /> Applicants
-        </a>
-        <a href="#" className="flex items-center gap-3 px-6 py-2 hover:bg-gray-800">
+        </Link>
+
+        <Link
+          to="/"
+          className="flex items-center gap-3 px-6 py-2 hover:bg-gray-800"
+        >
           <Building2 size={18} /> Employers
-        </a>
-        <a href="#" className="flex items-center gap-3 px-6 py-2 hover:bg-gray-800">
+        </Link>
+
+        <Link
+          to="/settings"
+          className="flex items-center gap-3 px-6 py-2 hover:bg-gray-800"
+        >
           <Settings size={18} /> Settings
-        </a>
+        </Link>
       </nav>
     </aside>
   );
